@@ -15,6 +15,8 @@ export default function Register({ onRegistered }) {
     try {
       await apiPost('/api/auth/register', { email, password })
       setOk('User registered. You can now log in.')
+      window.alert('Usuario registrado con éxito. Ahora puedes iniciar sesión.')
+      window.location.href = '/login'
       onRegistered?.()
     } catch (err) {
       setError(err.message)
